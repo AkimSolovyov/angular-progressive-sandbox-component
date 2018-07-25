@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { User } from '../../models/User'; 
+import { User } from '../../models/User';
 
 @Component({
   selector: 'app-users',
@@ -12,12 +12,12 @@ export class UsersComponent implements OnInit {
     firstName: '',
     lastName: '',
     email: ''
-  }
+  };
   users: User[];
-  showExtended: boolean = true;
-  loaded: boolean = false;
-  enableAdd: boolean = false;
-  showUserForm: boolean = false;
+  showExtended = true;
+  loaded = false;
+  enableAdd = false;
+  showUserForm = false;
   @ViewChild('userForm') form: any;
   data: any;
 
@@ -48,7 +48,7 @@ export class UsersComponent implements OnInit {
   // }
 
   onSubmit({value, valid}: {value: User, valid: boolean}) {
-    if (!valid){
+    if (!valid) {
       console.log('Form is not valid');
     } else {
       value.isActive = true;
@@ -60,6 +60,4 @@ export class UsersComponent implements OnInit {
       this.form.reset();
     }
   }
-
-  
 }
